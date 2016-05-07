@@ -1,2 +1,2 @@
 # GoodCppLib
-write good cpp lib to use later
+write good cpp lib to use later,contributator wuxiao
