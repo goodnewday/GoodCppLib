@@ -22,7 +22,6 @@ void TCPClient()
 	if (connect(listenfd, (struct sockaddr*)&hints, sizeof( struct sockaddr_in)) != 0) {
 		printf(" connect fail\n");
 	}
-
 	ret = send(listenfd, buf, 100,0);
 
 }
