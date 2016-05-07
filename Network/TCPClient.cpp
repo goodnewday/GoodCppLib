@@ -4,8 +4,6 @@
 #include<strings.h>
 #include<stdio.h>
 
-
-
 void TCPClient()
 {
 	int             listenfd;
@@ -21,8 +19,9 @@ void TCPClient()
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
-	if (connect(listenfd, (struct sockaddr*)&hints, sizeof( struct sockaddr_in)) != 0)
+	if (connect(listenfd, (struct sockaddr*)&hints, sizeof( struct sockaddr_in)) != 0) {
 		printf(" connect fail\n");
+	}
 
 	ret = send(listenfd, buf, 100,0);
 
