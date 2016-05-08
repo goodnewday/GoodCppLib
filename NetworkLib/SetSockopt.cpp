@@ -45,7 +45,6 @@ int setsocket_keepalive(int sockfd)
 int setsocket_reuseaddr(int sockfd)
 {
 	int isuccess = 0;
-
     int on = 1;
     isuccess = setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
     if(isuccess != 0)  

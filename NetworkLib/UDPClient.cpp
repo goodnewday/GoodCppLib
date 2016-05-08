@@ -40,7 +40,7 @@ int UDPClient()
 	}
 
 	fromLen = sizeof(fromAddr);
-	if(recvfrom(sock,recvBuffer,128,0,(struct sockaddr*)&fromAddr,&fromLen)<0)
+	if(recvfrom(sock, recvBuffer, sizeof(recvBuffer), 0, (struct sockaddr*)&fromAddr,&fromLen)<0)
 	{
 		perror("recvfrom");
 		close(sock);
