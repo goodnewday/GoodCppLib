@@ -1,8 +1,8 @@
-#include<netinet/in.h>
-#include<sys/socket.h>
-#include<sys/types.h>
-#include<strings.h>
-#include<stdio.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <strings.h>
+#include <stdio.h>
 
 
 int TCPServer()
