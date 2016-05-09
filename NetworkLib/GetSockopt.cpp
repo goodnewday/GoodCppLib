@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<sys/types.h>          
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<netinet/tcp.h>
+#include <stdio.h>
+#include <sys/types.h>          
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
 
 int getsocket_rcvbuf(int sockfd, int *size)
 {
