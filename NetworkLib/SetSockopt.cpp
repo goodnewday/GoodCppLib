@@ -1,8 +1,10 @@
-#include<stdio.h>
-#include<sys/types.h>          
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<netinet/tcp.h>
+#include <stdio.h>
+#include <sys/types.h>          
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <netinet/ip.h>
+
 
 int setsocket_keepalive(int sockfd) 
 {    
@@ -50,8 +52,9 @@ int setsocket_reuseaddr(int sockfd)
     if(isuccess != 0)  
     {
         perror("setsockopt SO_REUSEADDR:");
-        return -1;
     }
+
+    return isuccess;
 }
 
 int setsocket_sndbuf(int sockfd)
@@ -63,7 +66,6 @@ int setsocket_sndbuf(int sockfd)
 	if(isuccess != 0)
 	{
 		perror("setsockopt SO_SNDBUF:");
-		return isuccess;
 	}
 
 	return isuccess;
@@ -79,11 +81,38 @@ int setsocket_rcvbuf(int sockfd)
 	if(isuccess != 0)
 	{
 		perror("setsockopt SO_SNDBUF:");
-		return isuccess;
 	}
 
 	return isuccess;
 }
 
+// The router will process priority, it's change IP Layer option
+int setsocket_IP_TOS(int sockfd)
+{
+	int isuccess = 0;
+	unsigned char  service_type = IPTOS_CLASS_CS6;
+	
+	isuccess = setsockopt(sockfd, SOL_IP/*IPPROTO_IP*/, IP_TOS, (void *)&service_type, sizeof(service_type)); 
+	if(isuccess != 0)
+	{
+		perror("setsockopt IP_TOS:"); 
+	}
+	
+	return isuccess;
+}
 
 
+//The linux kernel will process priority
+int setsocket_SO_PRIORITY(int sockfd)
+{
+	int isuccess = 0;
+	int priority = 6;	
+
+	isuccess = setsockopt(sockfd, SOL_SOCKET, SO_PRIORITY, &priority, sizeof(priority));
+	if(isuccess != 0)
+	{
+	 	perror("setsockopt SO_PRIORITY:");
+	}
+
+	return isuccess;
+}
