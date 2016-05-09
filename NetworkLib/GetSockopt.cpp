@@ -36,5 +36,3 @@ int getsocket_sndbuf(int sockfd, int *size)
 	*size = snd_buffsize;
 	return isuccess;
 }
-
-
