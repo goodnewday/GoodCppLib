@@ -1,4 +1,3 @@
-
 #include <atomic>
 
 class IUnKnown
@@ -11,4 +10,5 @@ class IUnKnown
 		
 	private:
 		std::atomic<int32_t>  refcount;
+
 };
