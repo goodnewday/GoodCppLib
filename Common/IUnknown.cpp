@@ -2,7 +2,7 @@
 
 IUnKnown::IUnKnown()
 {
-	refcount = 0;
+	m_refcount = 0;
 }
 IUnKnown::~IUnKnown()
 {
@@ -11,19 +11,19 @@ IUnKnown::~IUnKnown()
 
 int32_t IUnKnown::AddRef()
 {
-	refcount++;
+	m_refcount++;
 
-	return refcount;
+	return m_refcount;
 }
 
 int32_t IUnKnown::Release()
 {
-	if (--refcount == 0)
+	if (--m_refcount == 0)
 	{	
 		delete this;		
 	}
 
-	return refcount;
+	return m_refcount;
 }
 
 //πÊ‘Ú:

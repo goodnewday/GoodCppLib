@@ -9,6 +9,6 @@ class IUnKnown
 		int32_t  Release();
 		
 	private:
-		std::atomic<int32_t>  refcount;
+		std::atomic<int32_t>  m_refcount;
 
 };
