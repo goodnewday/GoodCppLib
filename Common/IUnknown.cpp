@@ -26,6 +26,7 @@ int32_t IUnKnown::Release()
 	return m_refcount;
 }
 
+
 //规则:
 //1.返回接口指针时调用AddRef
 //2.接口用完后调用Release
