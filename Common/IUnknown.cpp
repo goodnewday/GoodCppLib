@@ -20,17 +20,18 @@ int32_t IUnKnown::Release()
 {
 	if (--m_refcount == 0)
 	{	
-		delete this;		
+		delete this;
+		return 0;  //the obj have delete, don't use m_refcount
 	}
 
 	return m_refcount;
 }
 
 
-//规则:
-//1.返回接口指针时调用AddRef
-//2.接口用完后调用Release
-//3.赋值后调用AddRef.
+//瑙勫垯:
+//1.杩斿洖鎺ュ彛鎸囬拡鏃惰皟鐢ˋddRef
+//2.鎺ュ彛鐢ㄥ畬鍚庤皟鐢≧elease
+//3.璧嬪�煎悗璋冪敤AddRef.
 
 
 
