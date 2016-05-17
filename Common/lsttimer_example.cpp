@@ -1,16 +1,21 @@
 #include <stdio.h>
 #include <unistd.h>
+#include<map>
+#include<mutex>
+
 #include "lsttimer.h"
 
+// g++ lsttimer_example.cpp lsttimer.h -std=c++11
 //单一时间定时器,所有定时任务同样的时间间隔
 
-#define LIFETIME 5
+#define LIFETIME 30
 sort_timer_lst  g_timer_lst;
+map<int, util_timer  *> g_task_map;
+mutex                 g_task_map_lock;
 
 
 void HandleTimeOut(int sockfd)
 {
-	//CGlobalData::GetInstance()->m_NetworkFactory.m_pNetwork->CloseSocket(sockfd);
 	printf("Time Out,Will Close Socket\n");
 }
 
@@ -25,31 +30,31 @@ void AddTimer(int Socket)
 	timerNode->sockfd = Socket;	
 	timerNode->cb_func = HandleTimeOut;
 	g_timer_lst.add_timer(timerNode,LIFETIME);
-//	m_liveMap.insert(map<int, util_timer  *>::value_type(Socket, timerNode));
 	
+	g_task_map_lock.lock();
+	g_task_map.insert(map<int, util_timer  *>::value_type(Socket, timerNode));
+	g_task_map_lock.unlock();
+
 }
 
 void AdjustTimer(int Socket)
-{
-
-	//m_csFac.m_pCS->RdLock();
-
+{	
 	util_timer  *timerNode = NULL;
-	//map<int, util_timer  *>::iterator iter;
+	map<int, util_timer  *>::iterator iter;
+
+	g_task_map_lock.lock();
+	iter = g_task_map.find(Socket);
 
 
-//iter = m_liveMap.find(Socket);
-
-
-	//if (m_liveMap.end() != iter)
+	if (g_task_map.end() != iter)
 	{
-	//	timerNode = iter->second;
+		timerNode = iter->second;
 
-		g_timer_lst.adjust_timer(timerNode,LIFETIME);
+		g_timer_lst.adjust_timer(timerNode, LIFETIME);
 
-	}
-	
-	//m_csFac.m_pCS->RWUnLock();
+	}	
+	g_task_map_lock.unlock();
+
 }
 
 void DelTimer(util_timer  *timerNode)
@@ -63,8 +68,7 @@ void RunTimer(void *pParam)
 	while (1)
 	{
 		g_timer_lst.tick();
-//		CGlobalData::GetInstance()->GetTimeInterface()->SleepFun(5);
-		sleep(5);
+		usleep(10);
 	}
 }
 
@@ -72,7 +76,14 @@ void RunTimer(void *pParam)
 
 int main()
 {
-	AddTimer(1);
+	int i = 0;
+	
+	for(i = 0; i < 100; i++)
+	{
+		AddTimer(i);
+		usleep(100);
+	}
+	
 	RunTimer(NULL);
 	
 	sleep(10);
