@@ -1,5 +1,9 @@
 #include <pthread.h>
 
+void *thread_start(void *arg)
+{
+}
+
 int setattr_detach(pthread_attr_t *p_attr)
 {
 	pthread_attr_init(p_attr);
@@ -13,8 +17,8 @@ int main()
 	pthread_attr_t 	attr;
 	
 	setattr_detach(&attr);
-	pthread_create(&thread_id, &attr, &thread_start, (void*)tmp_param);
-	is_success = pthread_create(&thread_id, &attr, &thread_start, (void*)tmp_param);	
+	pthread_create(&thread_id, &attr, thread_start, NULL);
+	is_success = pthread_create(&thread_id, &attr, &thread_start, NULL);	
 	
-	pthread_join(tid,NULL);
+	pthread_join(thread_id, NULL);
 }

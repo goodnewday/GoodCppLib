@@ -4,7 +4,7 @@ class Spinlock {
 public:
 //	Spinlock() = default;
 	Spinlock() {
-		lock_.clear(memory_order_release);
+		lock_.clear(std::memory_order_release);
 	}
 	Spinlock(const Spinlock&) = delete;
 	Spinlock& operator= (const Spinlock&) = delete;
@@ -19,5 +19,5 @@ public:
 	}
 	
 	private:
-		atomic_flag lock_;
+		std::atomic_flag lock_;
 };
