@@ -1,15 +1,16 @@
-﻿生成启动时间为 2017/1/2 14:27:36。
-     1>项目“E:\Lib\SkySystem\Util\Util.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2017/1/2 16:16:03。
+     1>项目“E:\git-worksapce\GoodCppLib\Util\Util\Util.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt system.c
-         system.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt process.c
+         process.c
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Lib\SkySystem\Debug\Util.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Lib\SkySystem\Debug\Util.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Lib\SkySystem\Debug\Util.lib" /MACHINE:X86 /DLL Debug\daemon.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\git-worksapce\GoodCppLib\Util\Debug\Util.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\git-worksapce\GoodCppLib\Util\Debug\Util.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\git-worksapce\GoodCppLib\Util\Debug\Util.lib" /MACHINE:X86 /DLL Debug\daemon.obj
          Debug\os.obj
+         Debug\process.obj
          Debug\system.obj
-         Util.vcxproj -> E:\Lib\SkySystem\Debug\Util.dll
-     1>已完成生成项目“E:\Lib\SkySystem\Util\Util.vcxproj”(Build 个目标)的操作。
+         Util.vcxproj -> E:\git-worksapce\GoodCppLib\Util\Debug\Util.dll
+     1>已完成生成项目“E:\git-worksapce\GoodCppLib\Util\Util\Util.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.46
+已用时间 00:00:00.81

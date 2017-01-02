@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fcpu_5fnumber',['get_cpu_number',['../system_8c.html#a550e438230931aef75e0c4cdb9b62bb6',1,'system.c']]]
+  ['export',['EXPORT',['../daemon_8h.html#a3472d8cdbb788d5f1815b3522595bc49',1,'EXPORT():&#160;daemon.h'],['../os_8h.html#a3472d8cdbb788d5f1815b3522595bc49',1,'EXPORT():&#160;os.h'],['../process_8h.html#a3472d8cdbb788d5f1815b3522595bc49',1,'EXPORT():&#160;process.h'],['../system_8h.html#a3472d8cdbb788d5f1815b3522595bc49',1,'EXPORT():&#160;system.h']]]
 ];

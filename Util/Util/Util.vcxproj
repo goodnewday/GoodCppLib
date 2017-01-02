@@ -73,11 +73,13 @@
   <ItemGroup>
     <ClInclude Include="daemon.h" />
     <ClInclude Include="os.h" />
+    <ClInclude Include="process.h" />
     <ClInclude Include="system.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="daemon.c" />
     <ClCompile Include="os.c" />
+    <ClCompile Include="process.c" />
     <ClCompile Include="system.c" />
   </ItemGroup>
   <ItemGroup>
