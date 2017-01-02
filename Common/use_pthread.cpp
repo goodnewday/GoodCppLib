@@ -17,7 +17,6 @@ int main()
 	pthread_attr_t 	attr;
 	
 	setattr_detach(&attr);
-	pthread_create(&thread_id, &attr, thread_start, NULL);
 	is_success = pthread_create(&thread_id, &attr, &thread_start, NULL);	
 	
 	pthread_join(thread_id, NULL);
