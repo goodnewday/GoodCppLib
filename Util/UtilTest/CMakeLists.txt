@@ -17,6 +17,7 @@ ADD_DEFINITIONS("-std=c++11")
 
 #****************************This is Include File/Directories****************
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../Util/)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../UtilPlus/)
 
 #****************************This is Source File/Directories*****************
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
@@ -24,6 +25,7 @@ AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 #****************************This is 3Party Library   Directories**************************
 LINK_DIRECTORIES(./)
 LINK_DIRECTORIES(${PROJECT_BINARY_DIR}/../Util/)
+LINK_DIRECTORIES(${PROJECT_BINARY_DIR}/../UtilPlus/)
 #****************************This is 3Party Library **************************
 LINK_LIBRARIES(Util)
 
@@ -36,7 +38,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/)
 
 
 ADD_EXECUTABLE(${PROJECT_NAME} ${DIR_SRCS})
-TARGET_LINK_LIBRARIES( ${PROJECT_NAME} Util)
+TARGET_LINK_LIBRARIES( ${PROJECT_NAME} Util UtilPlus)
 
 
 

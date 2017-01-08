@@ -2,11 +2,7 @@
 #ifndef SkySystem_H_
 #define SkySystem_H_
 
-#ifdef __linux__
-#define EXPORT   
-#else
-#define EXPORT  __declspec(dllexport)
-#endif
+#include "util_config.h"
 
 #ifdef __cplusplus
 extern "C"

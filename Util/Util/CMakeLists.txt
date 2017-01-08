@@ -16,7 +16,7 @@ ADD_DEFINITIONS("-std=c++11")
 
 
 #****************************This is Include File/Directories****************
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../../Global/)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/)
 
 #****************************This is Source File/Directories*****************
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)

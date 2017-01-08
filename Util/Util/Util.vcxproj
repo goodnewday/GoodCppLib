@@ -75,6 +75,7 @@
     <ClInclude Include="os.h" />
     <ClInclude Include="process.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="util_config.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="daemon.c" />
